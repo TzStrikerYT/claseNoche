@@ -7,6 +7,8 @@ const courseSchema = new Schema({
     description: String,
     imgUrl: String
 },{
-    timestamps: true,
-    versionKey: false
+    timestamps: true, /* Fechas de creacion y actualizacion */
+    versionKey: false /* omito la version de quien inserto */
 })
+
+export default model('Course', courseSchema);
