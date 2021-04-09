@@ -15,6 +15,7 @@ import courseRoutes from './routes/course.routes'
 
 // uso de rutas
 
+
 app.listen(port, () => {
     console.log("Server escuchando el puerto", port)
 })
