@@ -10,9 +10,10 @@ const app = express()
 
 app.use(morgan('dev'))
 
-app.get('/', (req, res) => {
-    res.json({message: "Hello"})
-})
+// Importacion de rutas
+import courseRoutes from './routes/course.routes'
+
+// uso de rutas
 
 app.listen(port, () => {
     console.log("Server escuchando el puerto", port)
