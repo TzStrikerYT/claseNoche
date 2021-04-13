@@ -3,11 +3,14 @@ import morgan from 'morgan'
 import pkg from '../package.json'
 import './database'
 
+/* Importacion de rutas */
+import productRoutes from './routes/products.routes'
+
 const app = express();
 const port = 5000;
 
 app.use(morgan('dev'));
-
+app.use(express.json());
 //get devolver informacion
 //post enviar informacion y crear un registro
 //put actualizar informacion existente
@@ -22,6 +25,11 @@ app.get('/', (req, res) => {
         name: app.get('pkg').name
     })
 })
+
+/* Rutas */
+app.use('/api', productRoutes)
+// localhost:5000/api/products/la-ruta-a-usar
+
 
 app.listen(port, () => {
     console.log('Servidor escuchando en el puerto', port)
