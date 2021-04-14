@@ -26,6 +26,22 @@ export const getProducts = async (req, res) => {
     res.status(200).json(products)
 }
 
-export const getProductById = async (req, res) => {}
+export const getProductById = async (req, res) => {
+    console.log(req)
+    console.log(req.params.productId)
+    try {
+        const product = await Product.findById(req.params.productId)
+
+        if (product !== null){
+            res.status(200).json(product)
+        } else {
+            res.status(200).json({error: "El producto no existe"})
+        }
+
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
+
 export const updateProduct = async (req, res) => {}
 export const deleteProduct = async (req, res) => {}
