@@ -20,10 +20,12 @@ export const createProduct = async (req, res) => {
     res.status(201).json(productSaved)
 }
 
-export const getProducts = (req, res) => {
-    res.json({message: "Listando"})
+export const getProducts = async (req, res) => {
+    const products = await Product.find()
+
+    res.status(200).json(products)
 }
 
-export const getProductById = (req, res) => {}
-export const updateProduct = (req, res) => {}
-export const deleteProduct = (req, res) => {}
+export const getProductById = async (req, res) => {}
+export const updateProduct = async (req, res) => {}
+export const deleteProduct = async (req, res) => {}
