@@ -27,11 +27,11 @@ export const getProducts = async (req, res) => {
 }
 
 export const getProductById = async (req, res) => {
-    console.log(req)
+    console.log(req.params)
     console.log(req.params.productId)
     try {
         const product = await Product.findById(req.params.productId)
-
+        console.log(product)
         if (product !== null){
             res.status(200).json(product)
         } else {
@@ -43,5 +43,32 @@ export const getProductById = async (req, res) => {
     }
 }
 
-export const updateProduct = async (req, res) => {}
-export const deleteProduct = async (req, res) => {}
+export const updateProduct = async (req, res) => {
+    try {
+        const updateProduct = await Product.findByIdAndUpdate(req.params.productId, req.body, {new: true})
+        console.log(updateProduct)
+        if (updateProduct !== null){
+            res.status(200).json(updateProduct)
+        } else {
+            res.status(200).json({error: "El producto no existe"})
+        }
+
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
+
+export const deleteProduct = async (req, res) => {
+    try {
+        const productDeleted = await Product.findByIdAndDelete(req.params.productId)
+        console.log(productDeleted)
+        if (productDeleted !== null){
+            res.status(200).json({msg: "Producto Borrado"})
+        } else {
+            res.status(200).json({error: "El producto no existe"})
+        }
+
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
