@@ -1,0 +1,12 @@
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+    <div *ngFor="let posicion of menu">
+        <div class="card m-3" style="width: 18rem;">
+            <img width="300px" height="200px" src={{posicion.imgUrl}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{posicion.name}}</h5>
+              <p class="card-text">{{posicion.descripcion}}</p>
+              <a href="#" class="btn btn-primary">Ordenar</a>
+            </div>
+        </div>
+    </div>
+</div>
