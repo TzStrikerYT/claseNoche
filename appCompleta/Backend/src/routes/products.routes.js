@@ -3,10 +3,10 @@ const router = Router()
 
 import * as productController from '../controllers/product.controller'
 
-router.post('/crear', productController.createProduct)
-router.get('/listar', productController.getProducts)
-router.get('/listarUno/:productId', productController.getProductById)
-router.put('/actualizar/:productId', productController.updateProduct)
-router.delete('/eliminar/:productId', productController.deleteProduct)
+router.post('/', productController.createProduct)
+router.get('/', productController.getProducts)
+router.get('/:productId', productController.getProductById)
+router.put('/:productId', productController.updateProduct)
+router.delete('/:productId', productController.deleteProduct)
 
 export default router
