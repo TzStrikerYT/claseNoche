@@ -7,13 +7,16 @@ import { Product } from '../models/Product'
 })
 export class ProductsService {
 
-  URL_API = 'http://localhost:5000/api'
+  URL_API = 'http://localhost:5000/api' /* definen url del api */
 
-  products:Product[];
+  //interfaz
+  products:Product[]
 
-  constructor(private  http: HttpClient) { }
+  constructor(private http: HttpClient) { } //inicializar los metodos de la clase para acceder los metodos
 
+  /* Metodos de clase */
   getProducts(){
     return this.http.get<Product[]>(this.URL_API)
   }
+
 }

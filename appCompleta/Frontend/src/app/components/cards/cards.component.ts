@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductsService } from '../../services/products.service'
 
 @Component({
@@ -8,17 +9,9 @@ import { ProductsService } from '../../services/products.service'
 })
 export class CardsComponent implements OnInit {
 
-  constructor(public productService: ProductsService) { }
-
+  constructor(public productsService: ProductsService) { }
   ngOnInit(): void {
-    this.getProducts()
-  }
-
-  getProducts(){
-    this.productService.getProducts().subscribe(
-      res => this.productService.products = res,
-      err => this.productService.products = err
-    )
+    console.log(this.productsService.getProducts())
   }
 
 }

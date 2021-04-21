@@ -2,8 +2,8 @@ export interface Product {
     name: String
     price: String
     category: String
-    brand: string
-    imgUrl: string
+    brand: String
+    imgUrl: String
     updatedAt: string
     createdAt: string
     _id: string
