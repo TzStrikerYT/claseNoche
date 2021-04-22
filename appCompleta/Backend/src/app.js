@@ -1,6 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
-import cors from 'cors'
+//import cors from 'cors'
 import pkg from '../package.json'
 import './database'
 
@@ -10,7 +10,7 @@ import productRoutes from './routes/products.routes'
 const app = express();
 const port = 5000;
 
-app.use(cors())
+//app.use(cors())
 app.use(morgan('dev'));
 app.use(express.json());
 //get devolver informacion

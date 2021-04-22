@@ -2,7 +2,7 @@
 GET http://localhost:5000
 
 ###
-POST http://localhost:5000/api/crear
+POST http://localhost:5000/api
 Content-Type: application/json
 
 {
@@ -14,18 +14,18 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/api/listar
+GET http://localhost:5000/api
 
 ###
-GET http://localhost:5000/api/listarUno/607635964cb9d01f18eb4f67
+GET http://localhost:5000/api/607635964cb9d01f18eb4f67
 
 ###
-PUT http://localhost:5000/api/actualizar/6075051e2e33bd033c88930a
+PUT http://localhost:5000/api/6075051e2e33bd033c88930a
 Content-Type: application/json
 
 {
     "brand": "pollito"
 }
 
-###
-DELETE http://localhost:5000/api/eliminar/607e1efcdec7fb224468f21f
+###Borrar un registr
+DELETE http://localhost:5000/api/607e1efcdec7fb224468f21f
