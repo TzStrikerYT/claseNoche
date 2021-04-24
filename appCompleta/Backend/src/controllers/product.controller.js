@@ -20,6 +20,18 @@ export const createProduct = async (req, res) => {
     res.status(201).json(productSaved)
 }
 
+export const getProductsByPrice = async (req, res) => {
+    const products = await Product.find().sort({price: -1})
+
+    res.status(200).json(products)
+}
+
+export const getProductsByDate = async (req, res) => {
+    const products = await Product.find().sort({updatedAt: -1})
+
+    res.status(200).json(products)
+}
+
 export const getProducts = async (req, res) => {
     const products = await Product.find()
 
