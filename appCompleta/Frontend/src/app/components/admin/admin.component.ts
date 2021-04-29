@@ -37,7 +37,7 @@ export class AdminComponent implements OnInit {
     this.productService.selectedProduct = product;
   }
 
-  createService(form: NgForm){
+  createService(form?: NgForm){
     if (!form.value._id){
       this.productService.createProduct(form.value).subscribe(
         res => {
@@ -78,10 +78,15 @@ export class AdminComponent implements OnInit {
         }
       )
     }
+    this.cleanForm(form)
   }
 
-  cleanForm(){
-    console.log("Limpiado")
+  cleanForm(form?: NgForm){
+    if(form){
+      form.reset()
+      this.productService.selectedProduct = new Product()
+      this.executeService()
+    }
   }
 
   deleteService(_id: string){
