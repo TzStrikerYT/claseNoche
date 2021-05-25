@@ -23,7 +23,7 @@ let meses = [
   "diciembre",
 ];
 
-for(let i = 1; i < meses.length; i++){//meses
+for(let i = 0; i < meses.length; i++){//meses
     console.log(`****************** Mes ${meses[i]} *****************`);
     for (let j = 1; j <= 4; j++) {//semanas
         console.log(`============= Semana ${j} ===============`);
